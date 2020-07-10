@@ -1,0 +1,26 @@
+@import '../styles';
+
+.container
+{
+	font-family: Arial;
+}
+.title
+{
+	@extend %theme-system;
+	padding: {
+		left: $marginCuctom;
+		right:$marginCuctom;
+		top: $marginCuctom/$marginVerticalCustom;
+		bottom: $marginCuctom/$marginVerticalCustom;
+	}
+	/*position: fixed;
+	width: 100%;*/
+	box-shadow: 0 5px 15px 1px rgb(0,0,0,0.3);
+
+}
+.product-list
+{
+	display: flex;
+	padding: $marginCuctom/$marginVerticalCustom;;
+	flex-wrap: wrap;
+}

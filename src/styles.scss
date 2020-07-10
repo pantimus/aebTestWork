@@ -1,0 +1,23 @@
+body{
+	margin:0;
+	font{
+		family: Arial;
+		size: 12;
+	}
+	background: #eee;
+}
+
+$colorTheme:rgb(11,15,22);
+$card: 45px;
+$marginCuctom: 8%;
+$marginVerticalCustom: 4;
+%theme-system
+{
+	background: $colorTheme;
+	background: linear-gradient(28deg, rgba(11,15,22,1) 0%, rgba(43,49,64,1) 50%, rgba(164,197,255,1) 100%);
+	color: white;
+	font: {
+		color: white;
+		family: Arial;
+	}
+}

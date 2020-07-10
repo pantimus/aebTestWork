@@ -1,0 +1,51 @@
+@import '../../styles'; 
+.product-item
+{
+	margin: $marginCuctom/2;
+
+	background: white;
+	display: flex;
+	flex-wrap: wrap;
+	min-width: 200px;
+	//max-width: 25%;
+	border:{
+		radius: $card/4;
+	}
+	box-shadow: 0 0 15px 1px rgb(0,0,0,0.1);
+}
+
+.product-name
+{
+	max-width: 300px;
+	flex-basis: 100%;	
+	padding: $card/4 $card/2 $card/4 $card/2;
+	font:
+	{
+		weigth: bold;
+		size: 1.5em;
+		family: Arial;
+	}
+	border-top-left-radius: $card/4;
+	border-top-right-radius: $card/4;
+
+	@extend %theme-system;
+	
+}
+.product-price
+{
+	flex: 1 2 auto;
+	display: flex;
+	font-size: 2em;
+	margin: 10px;
+	text-align: center;
+	font-weight: bold;
+	align-items: center;
+	justify-content: center
+}
+.product-desc
+{
+	flex: 3 2 auto;
+	width: 70px;
+	padding: 15px;
+	font-size: 1.2em;
+}
