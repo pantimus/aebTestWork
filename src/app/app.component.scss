@@ -1,5 +1,7 @@
 @import '../styles';
 
+$addButton: 65px;
+
 app-product
 {
 	font-family: Arial;
@@ -23,4 +25,24 @@ app-product
 	display: flex;
 	padding: $marginCuctom/$marginVerticalCustom;;
 	flex-wrap: wrap;
+}
+.add-product
+{
+	position: fixed;
+	bottom: $addButton;
+	right: $addButton;
+	background: white;
+	height: $addButton;
+	width: $addButton;
+	animation: 5s;
+	border-radius: $addButton;
+	&:hover{
+		background: #3c465b;
+		& svg{
+			stroke: white; 
+		}
+	}
+	& svg{
+		 height: $addButton; stroke: #3c465b; 
+	}
 }
