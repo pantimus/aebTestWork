@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Product} from '../product/product';
 import { ProductService } from '../service/product.service';
 import { FormsModule }   from '@angular/forms';
+
 
 @Component({
   selector: 'app-product-form',
@@ -9,32 +10,37 @@ import { FormsModule }   from '@angular/forms';
   styleUrls: ['./product-form.component.scss']
 })
 export class ProductFormComponent implements OnInit {
-  
-	product: Product = new Product(0, "", 0, "Спецефично");
-
+   //@Input() visibility: boolean;
   counter: number = 0;
+
+	product: Product = new Product(0, "", 0, "");
   products: Product[]; 
 	constructor(private productsService: ProductService) { }
 
   ngOnInit(): void {
-    //this.addProduct(this.product);
-    this.product.id=0;
+    
     this.show();
   }
-  show()
+  show():void
   {
-    this.products = this.productsService.getProducts();
+    this.productsService.getProducts().subscribe(products => this.products = products );
+    
   }
-  addProduct(product:Product)
+  addProduct()
   {
-    //console.log(product);
-    this.productsService.addProductService(product);
-  }
-  onClick(product: Product){
+    
+    this.product.id = this.increment();
 
-    product.id = this.increment(); //костыль
-  	this.addProduct(product);
-    this.show();
+    this.productsService.addProductService(this.product);
   }
-  increment() { return this.counter++; }
+  onClick(product){
+    var sendProduct: Product = new Product(product.id, product.title, product.price, product.desc);
+  	this.addProduct();
+
+  }
+  increment()
+  {
+    return this.counter++;//костыль
+  }
+
 }

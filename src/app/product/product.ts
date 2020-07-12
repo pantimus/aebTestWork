@@ -3,9 +3,6 @@ export class Product {
 	public id: number,
 	public title: string,
 	public price: number,
-	public desc: string,)
-	{
-
-	}
+	public desc: string,){}
 
 }

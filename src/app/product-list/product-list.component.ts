@@ -19,6 +19,6 @@ export class ProductListComponent implements OnInit {
   }
   setProduct(): void
   {
-  	this.productsList = this.products.getProducts();
+  	//this.productsList = this.products.getProducts();
   }
 }	
