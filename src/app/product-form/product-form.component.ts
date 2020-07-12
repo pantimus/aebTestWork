@@ -35,6 +35,7 @@ export class ProductFormComponent implements OnInit {
     product.id = this.increment(); //костыль
 
   	this.addProduct(this.product);
+    
   }
   increment() { return this.counter++; }
 }

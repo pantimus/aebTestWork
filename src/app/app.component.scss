@@ -25,6 +25,7 @@ app-product
 	display: flex;
 	padding: $marginCuctom/$marginVerticalCustom;;
 	flex-wrap: wrap;
+	justify-content: center;
 }
 
 .add-product

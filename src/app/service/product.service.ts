@@ -18,4 +18,13 @@ export class ProductService {
   {
   	Products.push(new Product (product.id, product.title,product.price,product.desc));
   }
+  delete(id)
+  {
+  	for(var i = Products.length - 1; i >= 0; i--) {
+    if(Products[i].id == id) {
+       Products.splice(i, 1);
+       break;
+    }
+}
+  }
 }

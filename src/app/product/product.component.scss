@@ -16,7 +16,7 @@
 
 .product-name
 {
-	flex-basis: 100%;	
+	flex-basis: 67%;	
 	padding: $card/4 $card/2 $card/4 $card/2;
 	font:
 	{
@@ -29,6 +29,28 @@
 
 	@extend %theme-system;
 	
+}
+.delete{
+	
+	svg{
+		stroke: white;
+		width: 30px;
+		padding: 5px;
+		background: #3c465b;
+		margin: 5px;
+		border-radius: 30px;
+		height: 30px;
+		
+	}
+	svg:hover{
+			background: white;
+			stroke: #3c465b;
+		}
+	flex: 1;
+	
+	
+	display: flex;
+	justify-content: center;
 }
 .product-price
 {
