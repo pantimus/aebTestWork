@@ -26,11 +26,12 @@ app-product
 	padding: $marginCuctom/$marginVerticalCustom;;
 	flex-wrap: wrap;
 }
+
 .add-product
 {
 	position: fixed;
-	bottom: $addButton;
-	right: $addButton;
+	bottom: $addButton/2;
+	right: $addButton/2;
 	background: white;
 	height: $addButton;
 	width: $addButton;
@@ -45,4 +46,24 @@ app-product
 	& svg{
 		 height: $addButton; stroke: #3c465b; 
 	}
+}
+.parent {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    overflow: auto;
+}
+
+.block {
+    margin: auto;
+    padding: 35px;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 5px 15px 1px rgb(0,0,0,0.3);
+    font-family: Arial;
+    display: flex;
+    flex-wrap: wrap;
 }

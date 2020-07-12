@@ -6,7 +6,7 @@
 	background: white;
 	display: flex;
 	flex-wrap: wrap;
-	width: 40%;
+	max-width: 400px;
 	//max-width: 25%;
 	border:{
 		radius: $card/4;
@@ -36,6 +36,7 @@
 	display: flex;
 	font-size: 2em;
 	margin: 10px;
+	min-width: 100px;
 	text-align: center;
 	font-weight: bold;
 	align-items: center;
@@ -46,4 +47,5 @@
 	flex: 3 2;
 	padding: 15px;
 	font-size: 1.2em;
+	min-width: 200px;
 }

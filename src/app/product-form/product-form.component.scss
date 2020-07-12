@@ -1,0 +1,33 @@
+@import '../../styles'; 
+
+.form-control{
+	flex: 1;
+	margin-right: 15px;
+	margin-bottom: 15px;
+	padding: 10px;
+	flex-basis: 30%;
+	font-size: 1.3em;
+}
+
+.form-add-product {
+        display: block;
+        border: none;
+        font{
+    	family: Arial; 
+    }
+}
+.input-group
+{
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+}
+.btn
+{
+	background: #444;
+	color: white;
+	padding: 10px;
+	font-family: Arial;
+	font-weight: bold;
+	margin-top: 15px; 
+}

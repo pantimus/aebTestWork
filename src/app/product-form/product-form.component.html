@@ -1,0 +1,19 @@
+<div class= "form-add-product">
+    <h2> Добавить список товаров </h2>
+ 
+    <div>
+        <div class="input-group">
+            <input [(ngModel)]="name" type="text" class="form-control" placeholder="Введите наименование" id="titleProduct" />
+            <input [(ngModel)]="price" type="text" class="form-control" placeholder="Введите цену" id="priceProduct" />
+            <input [(ngModel)]="desc" type="text" class="form-control" placeholder="Введите описание" id="descProduct" />
+        </div>
+    </div> 
+    
+    <button class="btn" type="button" (click)="onClick()">
+        <span>Добавить</span>
+    </button>
+    <span>
+    
+</span>
+</div>
+{{products | json}}

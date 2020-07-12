@@ -1,7 +1,13 @@
+$fontFamily: "Arial";
+*, html{
+	font{
+		family: $fontFamily;
+	}
+}
 body{
 	margin:0;
 	font{
-		family: Arial;
+		family: $fontFamily;
 		size: 12;
 	}
 	background: #eee;
@@ -21,3 +27,4 @@ $marginVerticalCustom: 4;
 		family: Arial;
 	}
 }
+
