@@ -7,6 +7,7 @@ import { Product} from '../product/product';
 })
 export class ProductFormComponent implements OnInit {
 
+	id: number;
 	product: Product;
 	products: [];
 	constructor() { }
@@ -28,8 +29,8 @@ export class ProductFormComponent implements OnInit {
   	this.product.desc = '';
   	this.product.id = 0;
   }
-
 }
+
 
 export class Increment {
 	counter: number = 0;
