@@ -11,12 +11,6 @@ export class AppComponent {
   title = 'Задание: Список Товаров';
   toggle()
   {
-  	if (this.visibility)
-  		{
-  			this.displayAddProduct='none';
-  		}
-  	else this.displayAddProduct='flex';
-
   	this.visibility=!this.visibility;
   }
 }
