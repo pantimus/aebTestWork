@@ -3,13 +3,13 @@
  
     <div>
         <div class="input-group">
-            <input [(ngModel)]="name" type="text" class="form-control" placeholder="Введите наименование" id="titleProduct" />
-            <input [(ngModel)]="price" type="text" class="form-control" placeholder="Введите цену" id="priceProduct" />
-            <input [(ngModel)]="desc" type="text" class="form-control" placeholder="Введите описание" id="descProduct" />
+            <input [(ngModel)]="product.title" type="text" class="form-control" placeholder="Введите наименование" />
+            <input [(ngModel)]="product.price" type="text" class="form-control" placeholder="Введите цену"  />
+            <input [(ngModel)]="product.desc" type="text" class="form-control" placeholder="Введите описание"  />
         </div>
     </div> 
     
-    <button class="btn" type="button" (click)="onClick()">
+    <button class="btn" type="button" (click)="onClick(product)">
         <span>Добавить</span>
     </button>
     <span>

@@ -8,7 +8,11 @@ export class ProductService {
  
   constructor() { }
  
-  getProducts(): Product[] {
+  getProducts() {
     return Products;
+  }
+  addProductService(product: Product)
+  {
+  	Products.push(product);
   }
 }
