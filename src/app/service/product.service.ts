@@ -5,22 +5,17 @@ import  { Observable, of} from 'rxjs';
 import { Product } from '../product/product';
 import { Products } from './product-data';
  
-@Injectable({
-	providedIn: 'root'
-})
+@Injectable()
 export class ProductService {
  
   constructor() { }
  
-  getProducts():  Observable<Product[]> {
+  getProducts(): Observable<Product[]> {
     return of(Products);
   }
 
-  addProductService(product: Product) 
+  addProductService(product: Product)
   {
-  	
-  	let pr = new Product (product.id, product.title,product.price,product.desc);
-  	Products.push(pr);
-  	
+  	Products.push(new Product (product.id, product.title,product.price,product.desc));
   }
 }

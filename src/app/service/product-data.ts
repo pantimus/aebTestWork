@@ -1,5 +1,3 @@
 import {Product} from '../product/product'
 
-export const Products: Product[] = [
-
-]
+export const Products: Product[]=[];
