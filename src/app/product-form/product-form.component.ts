@@ -41,7 +41,7 @@ export class ProductFormComponent implements OnInit {
    ]],
    price: [null,[
         Validators.required,
-        Validators.pattern(/^[0-9]{1,5}(?:\.[0-9]{3})*(?:\,[0-9]{2})?$/)
+        Validators.pattern(/^[0-9]*(?:\,[0-9]{2})?$/)
    ]
        ],
    desc: ['',[
