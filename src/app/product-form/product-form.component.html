@@ -1,14 +1,23 @@
-<form [formGroup]="FormValid" class= "form-add-product">
+<form [formGroup]="FormValid" class= "form-add-product" (submit)="onSubmit()">
     <h2> Добавить список товаров </h2>
  
     <div>
         <div  class="input-group" >
             <div class="input-css"><label for="title">Наименование</label>
-            <input formControlName="title" type="text" id="title" class="form-control"  [pattern]="titlePattern" placeholder="Введите наименование" required minlength="1" /></div>
+            <input formControlName="title" type="text" id="title" class="form-control"  placeholder="Введите наименование" required minlength="1" />
+            <div class="error" *ngIf="isControlInvalid('title')" >
+        Обязательное поле
+            </div></div>
             <div class="input-css"><label for="price">Цена</label>
-            <input formControlName="price" type="text" class="form-control"   required  maxlength="5" placeholder="Введите цену"  /></div>
+            <input formControlName="price" type="text" class="form-control"   required  maxlength="10" placeholder="Введите цену"  />
+        <div class="error" *ngIf="isControlInvalid('price')" >
+        Введите цифры
+    </div></div>
             <div class="input-css"><label for="desc">Описание</label>
-            <input formControlName="desc" type="text" class="form-control"   (keyup.enter)="onClick(product)" placeholder="Введите описание"  required minlength="1"  /></div>
+            <input formControlName="desc" type="text" class="form-control"  maxlength="255" (keyup.enter)="onSubmit()" placeholder="Введите описание"  required minlength="1"  />
+        <div class="error" *ngIf="isControlInvalid('desc')" >
+         Пустой фрагмент
+    </div></div>
         </div>
     </div> 
     
@@ -22,6 +31,8 @@
     <button class="btn" type="submit" >
         <span>Добавить</span>
     </button>
+
+
     <span>
     
 </span>

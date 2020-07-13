@@ -1,12 +1,13 @@
 @import '../../styles'; 
 
 .form-control{
-	flex: 1 2;
+	
 	margin-right: 15px;
 	margin-bottom: 15px;
 	padding: 10px;
 	//flex-basis: 30%;
 	font-size: 1.3em;
+	width: 90%;
 }
 
 .form-add-product {
@@ -18,10 +19,8 @@
 }
 .input-group
 {
-	display: flex;
+	
 	width: 100%;
-	flex-wrap: wrap;
-	align-items: baseline;
 }
 .btn
 {
@@ -65,6 +64,14 @@ label {
 }
 
 .input-css{
-	flex:1 1 auto;
+	flex:1 1 100%;
 
+}
+.error
+{
+	margin-bottom: 20px;
+    color: red;
+    margin-right: 25px;
+    text-align: right;
+    height: 10px;
 }

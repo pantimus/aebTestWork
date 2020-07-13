@@ -18,6 +18,7 @@ export class ProductService {
 
   addProductService(product: Product)
   {
+  	console.log(product);
   	Products.push(new Product (product.id, product.title,product.price,product.desc));
   }
   delete(id)

@@ -17,7 +17,7 @@ export class ProductFormComponent implements OnInit {
   @Output() childEvent = new EventEmitter();
 
   counter: number = 0;
-	product: Product = new Product(0, "", '', "");//костыль, нужно исправить если будет время
+	product: Product = new Product(null, "", null, "");//костыль, нужно исправить если будет время
   productsClass: Product[]; 
   FormValid: FormGroup;
   //pricePattern = "^ [a-z0-9 _-]";
@@ -37,16 +37,16 @@ export class ProductFormComponent implements OnInit {
   this.FormValid = this.formbuild.group({
    title: ['', [
         Validators.required,
-        Validators.pattern(/[А-я][A-z]/)
+        
    ]],
    price: [null,[
         Validators.required,
-        Validators.pattern(/[0-9]/)
+        Validators.pattern(/^[0-9]{1,5}(?:\.[0-9]{3})*(?:\,[0-9]{2})?$/)
    ]
        ],
    desc: ['',[
         Validators.required,
-        Validators.pattern(/[А-я]/)
+        
    ]]
   });
  }
@@ -58,12 +58,25 @@ export class ProductFormComponent implements OnInit {
   }
   addProduct(product: Product)
   {
-    this.productsService.addProductService(this.product);
+    this.productsService.addProductService(product);
   }
-  onClick(product){
+  isControlInvalid(controlTitle): boolean
+  {
+    const control = this.FormValid.controls[controlTitle];
+    const result = control.invalid && control.touched;
+    return result;
+  }
+  onSubmit(){
     
-    product.id = this.increment(); //костыль
-  	this.addProduct(this.product);
+    const controls = this.FormValid.controls;
+    if(this.FormValid.invalid)
+    {
+      Object.keys(controls).forEach(controlName=>controls[controlName].markAsTouched());
+      return;
+      
+    }
+    this.FormValid.value.id = this.increment(); //костыль
+    this.addProduct(this.FormValid.value);
   }
   toggle()
   {
