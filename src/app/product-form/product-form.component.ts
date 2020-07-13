@@ -1,14 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Product} from '../product/product';
-import { ProductService } from '../service/product.service';
+import { ProductService, visibleService } from '../service/product.service';
 import { FormsModule, FormGroup, FormControl}   from '@angular/forms';
+import { AppComponent} from '../app.component';
 
 @Component({
   selector: 'app-product-form',
   templateUrl: './product-form.component.html',
   styleUrls: ['./product-form.component.scss']
 })
+
+
+
 export class ProductFormComponent implements OnInit {
+
+  @Input() inputForm: AppComponent;
 
   counter: number = 0;
 	product: Product = new Product(0, "", '', "");//костыль, нужно исправить если будет время
@@ -16,7 +22,9 @@ export class ProductFormComponent implements OnInit {
 
   //pricePattern = "^ [a-z0-9 _-]";
 
-	constructor(private productsService: ProductService) { }
+	constructor(
+    private productsService: ProductService,
+    private visibleService: visibleService) { }
 
   ngOnInit(): void {
     //this.addProduct(this.product);
@@ -36,12 +44,9 @@ export class ProductFormComponent implements OnInit {
   onClick(product){
     
     product.id = this.increment(); //костыль
-
-
   	this.addProduct(this.product);
-
   }
-
+  
   values = '';
 
   onKey(event: any) { // without type info

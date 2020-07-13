@@ -3,13 +3,13 @@
   </header>
 <div class="container">
   <div class="parent" [style.display]="visibility?'flex':'none'">
-    <app-product-form class="block"  ></app-product-form>
+    <app-product-form [formModule]="sideNav" class="block"  ></app-product-form>
   </div>
   
 
     <app-product-list class="product-list"></app-product-list>
 
-  <div class="add-product" (click)="toggle()">
+  <div class="add-product" #sideNav (click)="toggle()">
     <svg class="svg-circleplus" viewBox="0 0 100 100">
   <circle cx="50" cy="50" r="45" fill="none" stroke-width="7.5"></circle>
   <line x1="32.5" y1="50" x2="67.5" y2="50" stroke-width="5"></line>

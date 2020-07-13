@@ -4,7 +4,9 @@ import  { Observable, of} from 'rxjs';
 
 import { Product } from '../product/product';
 import { Products } from './product-data';
- 
+
+
+
 @Injectable()
 export class ProductService {
  
@@ -26,5 +28,16 @@ export class ProductService {
        break;
     }
 }
+  }
+}
+
+
+var visibility: boolean = false;
+@Injectable()
+export class visibleService {
+	toggle() {
+		console.log(visibility);
+		visibility = !visibility;
+    	return visibility;
   }
 }

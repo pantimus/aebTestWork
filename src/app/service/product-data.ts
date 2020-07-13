@@ -7,3 +7,5 @@ export const Products: Product[]=[
 	price: 60,
 	desc: "Приятный, свежий и ароматный хлеб. Поешь и будешь сытым"
 }];
+
+
