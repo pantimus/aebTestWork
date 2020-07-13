@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { Product} from '../product/product';
 import { ProductService, visibleService } from '../service/product.service';
-import { FormsModule, FormGroup, FormControl}   from '@angular/forms';
+import { FormBuilder , FormGroup, Validators }   from '@angular/forms';
 import { AppComponent} from '../app.component';
 
 @Component({
@@ -19,18 +19,37 @@ export class ProductFormComponent implements OnInit {
   counter: number = 0;
 	product: Product = new Product(0, "", '', "");//костыль, нужно исправить если будет время
   productsClass: Product[]; 
-
+  FormValid: FormGroup;
   //pricePattern = "^ [a-z0-9 _-]";
 
 	constructor(
     private productsService: ProductService,
-    private visibleService: visibleService) { }
+    private visibleService: visibleService,
+    private formbuild: FormBuilder) { }
 
   ngOnInit(): void {
     //this.addProduct(this.product);
     this.product.id=0;
     this.show();
+    this.initForm();
   }
+  initForm(){
+  this.FormValid = this.formbuild.group({
+   title: ['', [
+        Validators.required,
+        Validators.pattern(/[А-я][A-z]/)
+   ]],
+   price: [null,[
+        Validators.required,
+        Validators.pattern(/[0-9]/)
+   ]
+       ],
+   desc: ['',[
+        Validators.required,
+        Validators.pattern(/[А-я]/)
+   ]]
+  });
+ }
   show()
   {
     console.log(this.productsService.getProducts())
@@ -50,11 +69,7 @@ export class ProductFormComponent implements OnInit {
   {
     this.childEvent.emit();
   }
-  values = '';
 
-  onKey(event: any) { // without type info
-    this.values += event.target.value + ' | ';
-  }
   increment() { return this.counter++; }
 }
 

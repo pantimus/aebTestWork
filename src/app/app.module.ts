@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule }   from '@angular/forms';
+import { ReactiveFormsModule  }   from '@angular/forms';
 
 import { ProductService, visibleService } from './service/product.service'
 import { AppComponent } from './app.component';
@@ -18,7 +18,7 @@ import { ProductFormComponent } from './product-form/product-form.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    ReactiveFormsModule 
   ],
   providers: [ProductService, visibleService],
   bootstrap: [AppComponent]

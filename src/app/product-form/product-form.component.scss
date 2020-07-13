@@ -1,11 +1,11 @@
 @import '../../styles'; 
 
 .form-control{
-	flex: 1;
+	flex: 1 2;
 	margin-right: 15px;
 	margin-bottom: 15px;
 	padding: 10px;
-	flex-basis: 30%;
+	//flex-basis: 30%;
 	font-size: 1.3em;
 }
 
@@ -21,6 +21,7 @@
 	display: flex;
 	width: 100%;
 	flex-wrap: wrap;
+	align-items: baseline;
 }
 .btn
 {
@@ -52,4 +53,18 @@
 	
 	display: flex;
 	justify-content: center;
+}
+
+input.ng-touched.ng-invalid{
+ border-color: red;
+}
+
+label {
+	font-size: 1.3em;
+	margin-right: 15px;
+}
+
+.input-css{
+	flex:1 1 auto;
+
 }
