@@ -3,9 +3,9 @@
  
     <div>
         <div class="input-group">
-            <input [(ngModel)]="product.title" type="text" class="form-control"  placeholder="Введите наименование" />
-            <input [(ngModel)]="product.price" type="text" class="form-control" pattern="[0-9]*[.,][0-9]+$" required placeholder="Введите цену"  />
-            <input [(ngModel)]="product.desc" type="text" class="form-control" placeholder="Введите описание"  />
+            <input [(ngModel)]="product.title" type="text" class="form-control"  [pattern]="titlePattern" placeholder="Введите наименование" required minlength="1" />
+            <input [(ngModel)]="product.price" type="text" class="form-control"   required  maxlength="5" placeholder="Введите цену"  />
+            <input [(ngModel)]="product.desc" type="text" class="form-control"   (keyup.enter)="onClick(product)" placeholder="Введите описание"  required minlength="1"  />
         </div>
     </div> 
     

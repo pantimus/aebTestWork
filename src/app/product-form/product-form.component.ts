@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product} from '../product/product';
 import { ProductService } from '../service/product.service';
-import { FormsModule, FormGroup  }   from '@angular/forms';
+import { FormsModule, FormGroup, FormControl}   from '@angular/forms';
 
 @Component({
   selector: 'app-product-form',
@@ -11,8 +11,11 @@ import { FormsModule, FormGroup  }   from '@angular/forms';
 export class ProductFormComponent implements OnInit {
 
   counter: number = 0;
-	product: Product = new Product('', "", '', "");//костыль, нужно исправить если будет время
+	product: Product = new Product(0, "", '', "");//костыль, нужно исправить если будет время
   productsClass: Product[]; 
+
+  //pricePattern = "^ [a-z0-9 _-]";
+
 	constructor(private productsService: ProductService) { }
 
   ngOnInit(): void {
@@ -34,8 +37,15 @@ export class ProductFormComponent implements OnInit {
     
     product.id = this.increment(); //костыль
 
+
   	this.addProduct(this.product);
-    
+
+  }
+
+  values = '';
+
+  onKey(event: any) { // without type info
+    this.values += event.target.value + ' | ';
   }
   increment() { return this.counter++; }
 }
