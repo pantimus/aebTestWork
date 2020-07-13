@@ -18,7 +18,9 @@ export class AppComponent {
   title = 'Задание: Список Товаров';
  
 
-
+  test(msg){
+    console.log(msg);
+  }
   toggle()
   {
   	this.visibility = this.visibleService.toggle();

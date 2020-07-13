@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { Product} from '../product/product';
 import { ProductService, visibleService } from '../service/product.service';
 import { FormsModule, FormGroup, FormControl}   from '@angular/forms';
@@ -14,7 +14,7 @@ import { AppComponent} from '../app.component';
 
 export class ProductFormComponent implements OnInit {
 
-  @Input() inputForm: AppComponent;
+  @Output() childEvent = new EventEmitter();
 
   counter: number = 0;
 	product: Product = new Product(0, "", '', "");//костыль, нужно исправить если будет время
@@ -46,7 +46,10 @@ export class ProductFormComponent implements OnInit {
     product.id = this.increment(); //костыль
   	this.addProduct(this.product);
   }
-  
+  toggle()
+  {
+    this.childEvent.emit();
+  }
   values = '';
 
   onKey(event: any) { // without type info
